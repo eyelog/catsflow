@@ -3,9 +3,11 @@ package ru.eyelog.catsflow.di
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
+import ru.eyelog.catsflow.activity.di.DependenciesMain
 import ru.eyelog.feature_favorites.di.DependenciesFavoriteCats
 import ru.eyelog.feature_mainlist.di.DependenciesMainList
 import ru.eyelog.core_common.ComponentDependencies
+import ru.eyelog.core_data.di.DependenciesGlide
 
 @Module
 abstract class ModuleComponentDependencies {
@@ -15,10 +17,10 @@ abstract class ModuleComponentDependencies {
     @ComponentDependenciesKey(DependenciesMain::class)
     abstract fun provideDependenciesMain(component: ComponentApp): ComponentDependencies
 
-//    @Binds
-//    @IntoMap
-//    @ComponentDependenciesKey(DependenciesGlide::class)
-//    abstract fun provideDependenciesGlide(component: ComponentApp): ComponentDependencies
+    @Binds
+    @IntoMap
+    @ComponentDependenciesKey(DependenciesGlide::class)
+    abstract fun provideDependenciesGlide(component: ComponentApp): ComponentDependencies
 
     @Binds
     @IntoMap

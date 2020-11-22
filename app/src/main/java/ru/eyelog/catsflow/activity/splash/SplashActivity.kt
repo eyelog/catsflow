@@ -10,9 +10,10 @@ import com.bumptech.glide.request.target.DrawableImageViewTarget
 import ru.eyelog.catsflow.R
 import ru.eyelog.catsflow.activity.di.DaggerSplashComponent
 import ru.eyelog.catsflow.activity.main.MainActivity
+import ru.eyelog.core_common.abstractions.BaseActivity
 import javax.inject.Inject
 
-class SplashActivity: AppCompatActivity() {
+class SplashActivity: BaseActivity() {
 
     @Inject
     lateinit var viewModel: SplashViewModel

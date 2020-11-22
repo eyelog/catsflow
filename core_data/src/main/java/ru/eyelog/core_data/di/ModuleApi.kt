@@ -12,19 +12,19 @@ import retrofit2.converter.gson.GsonConverterFactory
 import ru.eyelog.core_data.network.ApiCats
 import ru.eyelog.core_data.network.interceptors.InterceptorAuth
 import ru.eyelog.core_data.network.interceptors.InterceptorLogging
-import ru.eyelog.core_common.ApplicationScope
+import ru.eyelog.core_common.annotations.ApplicationScope
 import java.util.concurrent.TimeUnit
 import javax.inject.Named
 
 @Module
 class ModuleApi {
 
-    @ru.eyelog.core_common.ApplicationScope
+    @ApplicationScope
     @Provides
     fun ApiCats(retrofit: Retrofit): ApiCats =
         retrofit.create(ApiCats::class.java)
 
-    @ru.eyelog.core_common.ApplicationScope
+    @ApplicationScope
     @Provides
     fun provideOkHttpClient(context: Context): OkHttpClient {
         val interceptorAuth = InterceptorAuth()
@@ -53,7 +53,7 @@ class ModuleApi {
             .build()
     }
 
-    @ru.eyelog.core_common.ApplicationScope
+    @ApplicationScope
     @Provides
     fun provideRetrofitJson(okHttpClient: OkHttpClient):
             Retrofit {

@@ -1,6 +1,5 @@
-package ru.eyelog.catsflow.utils.extensions
+package ru.eyelog.core_common.extensions
 
-import android.view.View
 import io.reactivex.Completable
 import io.reactivex.Flowable
 import io.reactivex.Maybe

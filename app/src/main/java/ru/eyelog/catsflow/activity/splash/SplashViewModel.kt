@@ -6,11 +6,12 @@ import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.ViewModel
 import io.reactivex.Flowable.interval
 import io.reactivex.disposables.Disposable
-import ru.eyelog.catsflow.utils.extensions.disposeOnDestroy
-import ru.eyelog.catsflow.utils.extensions.ioMain
+import ru.eyelog.core_common.abstractions.BaseViewModel
+import ru.eyelog.core_common.extensions.disposeOnDestroy
+import ru.eyelog.core_common.extensions.ioMain
 import java.util.concurrent.TimeUnit
 
-class SplashViewModel: ViewModel(), LifecycleObserver {
+class SplashViewModel: BaseViewModel(), LifecycleObserver {
 
     val splashLiveData: LiveData<Boolean> get() = _splashLiveData
     private val _splashLiveData = MediatorLiveData<Boolean>()

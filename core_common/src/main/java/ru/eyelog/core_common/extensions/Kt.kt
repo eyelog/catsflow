@@ -1,4 +1,4 @@
-package ru.eyelog.catsflow.utils.extensions
+package ru.eyelog.core_common.extensions
 
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment

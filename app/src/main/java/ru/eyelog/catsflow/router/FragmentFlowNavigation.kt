@@ -8,8 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import ru.eyelog.catsflow.R
 import ru.eyelog.core_common.BackListener
+import ru.eyelog.core_common.abstractions.FragmentBase
 
-abstract class FragmentFlowNavigation : Fragment(), BackListener {
+abstract class FragmentFlowNavigation : FragmentBase(), BackListener {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.fragment_flow_navigation, container, false)

@@ -166,10 +166,6 @@ buildscript {
                 roomKapt: "androidx.room:room-compiler:$architectureRoomVersion"
         ]
 
-        localehelperDeps = [
-                localehelper: "com.zeugmasolutions.localehelper:locale-helper-android:$localeHelperAndroidVersion"
-        ]
-
         networkDeps = [
                 retrofitMain                          : "com.squareup.retrofit2:retrofit:$retrofitVersion",
                 retrofitConverter                     : "com.squareup.retrofit2:converter-gson:$retrofitVersion",

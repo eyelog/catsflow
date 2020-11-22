@@ -2,19 +2,38 @@ package ru.eyelog.catsflow.router
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import ru.eyelog.feature_favorites.ui.FavoriteCatsFragment
 import ru.eyelog.feature_mainlist.ui.MainListFragment
-import ru.eyelog.catsflow.utils.extensions.newInstance
+import ru.eyelog.core_common.extensions.newInstance
+import ru.eyelog.feature_favorites.ui.FavoriteCatsFragment
 
 class RouterAppImpl(private val containerId: Int) : BaseRouterApp() {
 
     private val manager: FragmentManager? get() = activity?.supportFragmentManager
 
+    private val mainListFragment: FragmentFlowNavigation by lazy {
+        manager?.findFragmentByTag(MAIN_LIST_SCREEN_TAG) as? FragmentFlowNavigation
+            ?: FragmentMainListTab()
+    }
+
+    class FragmentMainListTab : FragmentFlowNavigation() {
+        override fun createInitFragment(): Fragment = newInstance<MainListFragment>()
+    }
+
     override fun routeToMainList() =
-        addFlowScreen(newInstance<FavoriteCatsFragment>(), MAIN_LIST_SCREEN_TAG)
+        replaceTabFlowScreen(mainListFragment, MAIN_LIST_SCREEN_TAG)
+
+    private val favoriteCatsFragment: FragmentFlowNavigation by lazy {
+        manager?.findFragmentByTag(FAVORITE_LIST_SCREEN_TAG) as? FragmentFlowNavigation
+            ?: FragmentFavoriteCatsTab()
+    }
+
+    class FragmentFavoriteCatsTab : FragmentFlowNavigation() {
+        override fun createInitFragment(): Fragment = newInstance<FavoriteCatsFragment>()
+    }
 
     override fun routeToFavoriteList() =
-        addFlowScreen(newInstance<MainListFragment>(), FAVORITE_LIST_SCREEN_TAG)
+        replaceTabFlowScreen(favoriteCatsFragment, MAIN_LIST_SCREEN_TAG)
+
 
     override fun routeBack() = goBack()
 
@@ -24,6 +43,19 @@ class RouterAppImpl(private val containerId: Int) : BaseRouterApp() {
             screenName
         )
     }
+
+    private fun replaceTabFlowScreen(
+        fragment: FragmentFlowNavigation,
+        screenName: String
+    ) {
+        manager?.let {
+            it.beginTransaction()
+                .replace(containerId, fragment, screenName)
+                .addToBackStack(null)
+                .commit()
+        }
+    }
+
 
     private fun goBack() {
         (manager?.findFragmentById(containerId) as FragmentFlowNavigation?)?.goBack()

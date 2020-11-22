@@ -1,4 +1,4 @@
-package ru.eyelog.catsflow.di
+package ru.eyelog.catsflow.activity.di
 
 import ru.eyelog.catsflow.router.RouterApp
 import ru.eyelog.core_common.ComponentDependencies

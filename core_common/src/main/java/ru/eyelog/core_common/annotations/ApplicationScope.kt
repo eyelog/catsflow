@@ -1,4 +1,4 @@
-package ru.eyelog.core_common
+package ru.eyelog.core_common.annotations
 
 import javax.inject.Scope
 
