@@ -9,7 +9,7 @@ import ru.eyelog.feature_favorites.di.ModuleFavoriteCats
 import ru.eyelog.feature_mainlist.di.ModuleMainList
 import ru.eyelog.core_data.di.ModuleApi
 import ru.eyelog.core_data.di.ModuleRoom
-import ru.eyelog.core_data.utils.ApplicationScope
+import ru.eyelog.core_common.ApplicationScope
 import javax.inject.Named
 
 @ApplicationScope

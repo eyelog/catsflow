@@ -4,7 +4,7 @@ import android.content.Context
 import dagger.Module
 import dagger.Provides
 import ru.eyelog.catsflow.router.RouterAppImpl
-import ru.eyelog.core_data.utils.ApplicationScope
+import ru.eyelog.core_common.ApplicationScope
 import javax.inject.Named
 
 @Module
