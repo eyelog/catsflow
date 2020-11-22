@@ -60,4 +60,5 @@ dependencies {
     testImplementation unitTestsDeps.values()
     testImplementation featureTestingDeps.values()
 
+    implementation project(path: ':core_common')
 }

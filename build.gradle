@@ -47,10 +47,6 @@ buildscript {
 
         leakcanaryVersion = '1.5.4'
 
-        firebaseMessagingVersion = '20.0.0'
-        firebaseCoreVersion = '16.0.6'
-        firebaseIidVersion = '17.0.4'
-
         junitVersion = '4.12'
         hamcrestVersion = '2.1'
         mockitoVersion = '2.23.0'
@@ -86,14 +82,6 @@ buildscript {
                 library: "com.github.percolate:Mentions:$mentionsVersion"
         ]
 
-//        cameraxVersion = "1.0.0-beta01"
-//
-//        cameraXDeps = [
-//                camera2: "androidx.camera:camera-camera2:$cameraxVersion",
-//                lifecycle: "androidx.camera:camera-lifecycle:$cameraxVersion",
-//                view: "androidx.camera:camera-view:1.0.0-alpha08"
-//        ]
-
         rxAndroidDeps = [
                 rxAndroid: "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
         ]
@@ -102,7 +90,6 @@ buildscript {
                 rxJava  : "io.reactivex.rxjava2:rxjava:$rxVersion",
                 rxKotlin: "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
         ]
-
 
         betterLinkDeps = [
                 library: "me.saket:better-link-movement-method:$betterLinkVersion"
@@ -196,19 +183,6 @@ buildscript {
 
         kotlisSerializationDeps = [
                 kotlinxSerialization: "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$kotlinxSerializationVersion"
-        ]
-
-        airWatchUtils = [
-                miltidex                : "com.android.support:multidex:$multidexVersion",
-                leakcanary              : "com.squareup.leakcanary:leakcanary-android:$leakcanaryVersion",
-                kotlinxCoroutinesCore   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinxVersion",
-                kotlinxCoroutinesAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinxVersion",
-        ]
-
-        googleServ = [
-                firebase_messaging: "com.google.firebase:firebase-messaging:$firebaseMessagingVersion",
-                firebase_core     : "com.google.firebase:firebase-core:$firebaseCoreVersion",
-                firebase_iid      : "com.google.firebase:firebase-iid:$firebaseIidVersion"
         ]
 
         koinPack = [

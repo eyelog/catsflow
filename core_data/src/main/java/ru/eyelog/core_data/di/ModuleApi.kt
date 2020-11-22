@@ -12,18 +12,19 @@ import retrofit2.converter.gson.GsonConverterFactory
 import ru.eyelog.core_data.network.ApiCats
 import ru.eyelog.core_data.network.interceptors.InterceptorAuth
 import ru.eyelog.core_data.network.interceptors.InterceptorLogging
-import ru.eyelog.core_data.utils.ApplicationScope
+import ru.eyelog.core_common.ApplicationScope
 import java.util.concurrent.TimeUnit
+import javax.inject.Named
 
 @Module
 class ModuleApi {
 
-    @ApplicationScope
+    @ru.eyelog.core_common.ApplicationScope
     @Provides
     fun ApiCats(retrofit: Retrofit): ApiCats =
         retrofit.create(ApiCats::class.java)
 
-    @ApplicationScope
+    @ru.eyelog.core_common.ApplicationScope
     @Provides
     fun provideOkHttpClient(context: Context): OkHttpClient {
         val interceptorAuth = InterceptorAuth()
@@ -38,21 +39,21 @@ class ModuleApi {
             .build()
     }
 
-//    @ApplicationScope
-//    @Provides
-//    @Named("glideOkHttpClient")
-//    fun provideGlideOkHttpClient(context: Context): OkHttpClient {
-//        val interceptorLogging =
-//            InterceptorLogging().apply { level = InterceptorLogging.Level.BODY }
-//        return OkHttpClient.Builder()
-//            .connectTimeout(NETWORK_CONNECT_TIME_OUT_SECONDS, TimeUnit.SECONDS)
-//            .readTimeout(NETWORK_READ_TIME_OUT_SECONDS, TimeUnit.SECONDS)
-//            .writeTimeout(NETWORK_WRITE_TIME_OUT_SECONDS, TimeUnit.SECONDS)
-//            .addInterceptor(interceptorLogging)
-//            .build()
-//    }
-
     @ApplicationScope
+    @Provides
+    @Named("glideOkHttpClient")
+    fun provideGlideOkHttpClient(context: Context): OkHttpClient {
+        val interceptorLogging =
+            InterceptorLogging().apply { level = InterceptorLogging.Level.BODY }
+        return OkHttpClient.Builder()
+            .connectTimeout(NETWORK_CONNECT_TIME_OUT_SECONDS, TimeUnit.SECONDS)
+            .readTimeout(NETWORK_READ_TIME_OUT_SECONDS, TimeUnit.SECONDS)
+            .writeTimeout(NETWORK_WRITE_TIME_OUT_SECONDS, TimeUnit.SECONDS)
+            .addInterceptor(interceptorLogging)
+            .build()
+    }
+
+    @ru.eyelog.core_common.ApplicationScope
     @Provides
     fun provideRetrofitJson(okHttpClient: OkHttpClient):
             Retrofit {

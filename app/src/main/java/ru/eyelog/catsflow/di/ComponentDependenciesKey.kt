@@ -1,7 +1,7 @@
 package ru.eyelog.catsflow.di
 
 import dagger.MapKey
-import ru.eyelog.core_data.utils.ComponentDependencies
+import ru.eyelog.core_common.ComponentDependencies
 import kotlin.reflect.KClass
 
 @MapKey

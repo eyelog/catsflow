@@ -1,4 +1,4 @@
-package ru.eyelog.core_data.utils
+package ru.eyelog.core_common
 
 interface ComponentDependencies
 

@@ -5,7 +5,7 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 import ru.eyelog.feature_favorites.di.DependenciesFavoriteCats
 import ru.eyelog.feature_mainlist.di.DependenciesMainList
-import ru.eyelog.core_data.utils.ComponentDependencies
+import ru.eyelog.core_common.ComponentDependencies
 
 @Module
 abstract class ModuleComponentDependencies {
