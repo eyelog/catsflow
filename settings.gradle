@@ -1,0 +1,6 @@
+include ':core_common'
+include ':feature_favorites'
+include ':feature_mainlist'
+include ':core_data'
+include ':app'
+rootProject.name = "CatsFlow"

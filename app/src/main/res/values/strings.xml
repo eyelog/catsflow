@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CatsFlow</string>
+    <string name="main_list">Список котов</string>
+    <string name="favorite_list">Избранные коты</string>
+</resources>

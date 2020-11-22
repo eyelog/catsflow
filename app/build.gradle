@@ -1,0 +1,65 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+
+    defaultConfig {
+        applicationId "ru.eyelog.catsflow"
+        minSdkVersion 21
+        //noinspection OldTargetApi
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation androidXDeps.values()
+    implementation rxDeps.values()
+    implementation rxAndroidDeps.values()
+    implementation lifecycleDeps.values()
+    kapt lifecycleKapt.values()
+    implementation kotlinDeps.values()
+    implementation cropperImageLib.values()
+
+    implementation injectDeps.values()
+    implementation daggerDeps.values()
+    kapt daggerKapt.values()
+//    implementation googleServ.values()
+//    implementation koinPack.values()
+    implementation animationDeps.values()
+    implementation logsDeps.values()
+    implementation glideDeps.values()
+    kapt glideDepsKapt.values()
+//    implementation cameraXDeps.values()
+    implementation googleMaterial.values()
+
+    // feature modules
+    implementation project(path: ':feature_mainlist')
+    implementation project(path: ':feature_favorites')
+    implementation project(path: ':core_common')
+    implementation project(path: ':core_data')
+}
