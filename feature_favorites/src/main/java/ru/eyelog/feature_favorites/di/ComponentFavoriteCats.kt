@@ -6,7 +6,9 @@ import dagger.BindsInstance
 import dagger.Component
 import ru.eyelog.feature_favorites.ViewModelFavoritesList
 import ru.eyelog.feature_favorites.ui.FavoriteCatsFragment
+import ru.sibur.socialnetwork.core.utils.di.FeatureScope
 
+@FeatureScope
 @Component(
     dependencies = [DependenciesFavoriteCats::class],
     modules = [ModuleFavoriteCats::class]

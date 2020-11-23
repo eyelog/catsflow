@@ -5,9 +5,11 @@ import dagger.BindsInstance
 import dagger.Component
 import ru.eyelog.catsflow.activity.splash.SplashActivity
 import ru.eyelog.catsflow.activity.splash.SplashViewModel
+import ru.sibur.socialnetwork.core.utils.di.MainScope
 
-@Component(modules = [SplashModule::class])
-interface SplashComponent {
+@MainScope
+@Component(modules = [ModuleSplash::class])
+interface ComponentSplash {
 
     @Component.Builder
     interface Builder {
@@ -15,7 +17,7 @@ interface SplashComponent {
         @BindsInstance
         fun withActivity(activity: AppCompatActivity): Builder
 
-        fun build(): SplashComponent
+        fun build(): ComponentSplash
     }
 
     fun inject(activity: SplashActivity)

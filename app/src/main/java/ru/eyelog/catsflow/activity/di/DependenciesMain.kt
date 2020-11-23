@@ -14,5 +14,5 @@ interface DependenciesMain : ComponentDependencies {
 
     fun provideAppDatabase(): AppDatabase
 
-    fun provideAppRouter(): RouterApp
+    fun provideRouterApp(): RouterApp
 }

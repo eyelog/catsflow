@@ -9,8 +9,6 @@ import ru.eyelog.feature_favorites.RouterFavoritesList
 
 interface DependenciesFavoriteCats: ComponentDependencies {
 
-    fun provideContext(): Context
-
     fun provideRouterCats(): RouterFavoritesList
 
     fun provideAppDatabase(): AppDatabase

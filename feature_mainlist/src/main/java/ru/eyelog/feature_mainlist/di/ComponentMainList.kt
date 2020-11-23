@@ -6,7 +6,9 @@ import androidx.fragment.app.FragmentActivity
 import dagger.BindsInstance
 import dagger.Component
 import ru.eyelog.feature_mainlist.ui.MainListFragment
+import ru.sibur.socialnetwork.core.utils.di.FeatureScope
 
+@FeatureScope
 @Component(
     dependencies = [DependenciesMainList::class],
     modules = [ModuleMainList::class]

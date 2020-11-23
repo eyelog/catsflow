@@ -7,8 +7,8 @@ import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.DrawableImageViewTarget
 import ru.eyelog.catsflow.R
-import ru.eyelog.catsflow.activity.di.DaggerSplashComponent
-import ru.eyelog.catsflow.activity.main.MainActivity
+import ru.eyelog.catsflow.activity.di.DaggerComponentSplash
+import ru.eyelog.catsflow.activity.mainscreen.MainActivity
 import ru.eyelog.core_common.abstractions.BaseActivity
 import javax.inject.Inject
 
@@ -21,7 +21,7 @@ class SplashActivity: BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        DaggerSplashComponent.builder()
+        DaggerComponentSplash.builder()
             .withActivity(this)
             .build()
             .inject(this)

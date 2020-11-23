@@ -4,6 +4,7 @@ import dagger.BindsInstance
 import dagger.Component
 import ru.eyelog.catsflow.CatsApplication
 import ru.eyelog.catsflow.activity.di.DependenciesMain
+import ru.eyelog.catsflow.activity.di.ModuleMain
 import ru.eyelog.feature_favorites.di.DependenciesFavoriteCats
 import ru.eyelog.feature_mainlist.di.DependenciesMainList
 import ru.eyelog.feature_favorites.di.ModuleFavoriteCats
@@ -17,6 +18,7 @@ import javax.inject.Named
 @Component(
     modules = [
         ModuleApp::class,
+        ModuleMain::class,
         ModuleComponentDependencies::class,
         ModuleApi::class,
         ModuleRoom::class,

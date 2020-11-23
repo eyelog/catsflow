@@ -7,7 +7,7 @@ import dagger.Provides
 import ru.eyelog.catsflow.activity.splash.SplashViewModel
 
 @Module
-class SplashModule {
+class ModuleSplash {
 
     @Provides
     fun provideSplashViewModel(activity: AppCompatActivity): SplashViewModel {

@@ -1,6 +1,6 @@
 package ru.eyelog.catsflow.router
 
-import ru.eyelog.catsflow.activity.main.MainActivity
+import ru.eyelog.catsflow.activity.mainscreen.MainActivity
 
 abstract class BaseRouterApp : RouterApp {
 

@@ -2,12 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-            android:id="@+id/tap_news"
+            android:id="@+id/tap_main_list"
             android:icon="@drawable/ic_menu_list"
             android:title="@string/main_list" />
 
     <item
-            android:id="@+id/tap_search"
+            android:id="@+id/tap_fav_list"
             android:icon="@drawable/ic_menu_fav"
             android:title="@string/favorite_list" />
 

@@ -9,8 +9,6 @@ import ru.eyelog.feature_mainlist.RouterMainList
 
 interface DependenciesMainList: ComponentDependencies {
 
-    fun provideContext(): Context
-
     fun provideRouterMainList(): RouterMainList
 
     fun provideAppDatabase(): AppDatabase
