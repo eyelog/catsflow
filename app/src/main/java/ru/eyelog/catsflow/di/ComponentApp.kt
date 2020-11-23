@@ -11,8 +11,6 @@ import ru.eyelog.feature_mainlist.di.ModuleMainList
 import ru.eyelog.core_data.di.ModuleApi
 import ru.eyelog.core_data.di.ModuleRoom
 import ru.eyelog.core_common.annotations.ApplicationScope
-import ru.eyelog.core_data.di.DependenciesGlide
-import ru.eyelog.core_data.di.ModuleGlide
 import javax.inject.Named
 
 @ApplicationScope
@@ -24,15 +22,13 @@ import javax.inject.Named
         ModuleRoom::class,
         ModuleRouter::class,
         ModuleMainList::class,
-        ModuleFavoriteCats::class,
-        ModuleGlide::class
+        ModuleFavoriteCats::class
     ]
 )
 interface ComponentApp :
     DependenciesMain,
     DependenciesMainList,
-    DependenciesFavoriteCats,
-    DependenciesGlide {
+    DependenciesFavoriteCats {
 
     @Component.Builder
     interface Builder {

@@ -26,7 +26,7 @@ class ModuleApi {
 
     @ApplicationScope
     @Provides
-    fun provideOkHttpClient(context: Context): OkHttpClient {
+    fun provideOkHttpClient(): OkHttpClient {
         val interceptorAuth = InterceptorAuth()
         val interceptorLogging =
             InterceptorLogging().apply { level = InterceptorLogging.Level.BODY }
@@ -35,20 +35,6 @@ class ModuleApi {
             .readTimeout(NETWORK_READ_TIME_OUT_SECONDS, TimeUnit.SECONDS)
             .writeTimeout(NETWORK_WRITE_TIME_OUT_SECONDS, TimeUnit.SECONDS)
             .addInterceptor(interceptorAuth)
-            .addInterceptor(interceptorLogging)
-            .build()
-    }
-
-    @ApplicationScope
-    @Provides
-    @Named("glideOkHttpClient")
-    fun provideGlideOkHttpClient(context: Context): OkHttpClient {
-        val interceptorLogging =
-            InterceptorLogging().apply { level = InterceptorLogging.Level.BODY }
-        return OkHttpClient.Builder()
-            .connectTimeout(NETWORK_CONNECT_TIME_OUT_SECONDS, TimeUnit.SECONDS)
-            .readTimeout(NETWORK_READ_TIME_OUT_SECONDS, TimeUnit.SECONDS)
-            .writeTimeout(NETWORK_WRITE_TIME_OUT_SECONDS, TimeUnit.SECONDS)
             .addInterceptor(interceptorLogging)
             .build()
     }
