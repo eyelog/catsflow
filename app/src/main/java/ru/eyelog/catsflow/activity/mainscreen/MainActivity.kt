@@ -1,15 +1,15 @@
 package ru.eyelog.catsflow.activity.mainscreen
 
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import ru.eyelog.catsflow.R
 import ru.eyelog.catsflow.activity.di.DaggerComponentMain
 import ru.eyelog.catsflow.router.RouterApp
-import ru.eyelog.core_common.abstractions.BaseActivity
 import ru.eyelog.core_common.extensions.findComponentDependencies
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
-class MainActivity : BaseActivity() {
+class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var mainViewModel: MainViewModel

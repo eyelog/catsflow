@@ -1,6 +1,7 @@
 package ru.eyelog.catsflow
 
 import android.app.Application
+import android.content.Context
 import android.content.res.Configuration
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.ProcessLifecycleOwner

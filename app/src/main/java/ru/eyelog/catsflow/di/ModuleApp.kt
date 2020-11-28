@@ -21,6 +21,4 @@ class ModuleApp(private var appContext: Context) {
     ): RouterAppImpl {
         return RouterAppImpl(containerId)
     }
-
-
 }
