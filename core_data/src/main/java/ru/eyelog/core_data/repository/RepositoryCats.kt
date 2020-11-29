@@ -1,6 +1,5 @@
 package ru.eyelog.core_data.repository
 
-import io.reactivex.rxkotlin.toFlowable
 import ru.eyelog.core_data.database.AppDatabase
 import ru.eyelog.core_data.database.dao.DaoCats
 import ru.eyelog.core_data.mappers.getPhotoModel
@@ -17,9 +16,7 @@ class RepositoryCats @Inject constructor(
         offset: Int,
         limit: Int
     ) = apiAlbums.find(order, offset, limit)
-        .flatMap { photoList ->
-            photoList.map {
-                getPhotoModel(it)
-            }.toList().toFlowable()
-        }
+            .map {
+                it.map (::getPhotoModel)
+            }
 }

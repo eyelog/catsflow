@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import dagger.BindsInstance
 import dagger.Component
+import ru.eyelog.feature_mainlist.ui.AdapterCats
 import ru.eyelog.feature_mainlist.ui.MainListFragment
 import ru.sibur.socialnetwork.core.utils.di.FeatureScope
 
@@ -32,4 +33,6 @@ interface ComponentMainList {
     fun inject(fragment: MainListFragment)
 
     fun provideViewModelMainList(): ViewModelMainList
+
+    fun provideCatsAdapter(): AdapterCats
 }

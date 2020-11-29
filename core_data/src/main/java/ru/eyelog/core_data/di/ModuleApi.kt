@@ -1,6 +1,5 @@
 package ru.eyelog.core_data.di
 
-import android.content.Context
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
@@ -14,7 +13,6 @@ import ru.eyelog.core_data.network.interceptors.InterceptorAuth
 import ru.eyelog.core_data.network.interceptors.InterceptorLogging
 import ru.eyelog.core_common.annotations.ApplicationScope
 import java.util.concurrent.TimeUnit
-import javax.inject.Named
 
 @Module
 class ModuleApi {

@@ -32,17 +32,10 @@ class RouterAppImpl(private val containerId: Int) : BaseRouterApp() {
     }
 
     override fun routeToFavoriteList() =
-        replaceTabFlowScreen(favoriteCatsFragment, MAIN_LIST_SCREEN_TAG)
+        replaceTabFlowScreen(favoriteCatsFragment, FAVORITE_LIST_SCREEN_TAG)
 
 
     override fun routeBack() = goBack()
-
-    private fun addFlowScreen(fragment: Fragment, screenName: String) {
-        (manager?.findFragmentById(containerId) as FragmentFlowNavigation?)?.addScreen(
-            fragment,
-            screenName
-        )
-    }
 
     private fun replaceTabFlowScreen(
         fragment: FragmentFlowNavigation,
